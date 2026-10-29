@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alisha Pathan — Your Forex Girl</title>
+  <meta name="description" content="Learn, trade & grow together. Live Zoom trading sessions, daily Gold (XAU/USD) trade ideas, practical training and exclusive tools — with no separate community membership fee." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFFBF8',
+            ink: '#111827',
+            brand: { DEFAULT: '#1769FF', dark: '#0F55D6', light: '#E3F0FF', wash: '#EFF6FF' },
+            gold: { DEFAULT: '#C5A253', light: '#F6EEDC' },
+            line: '#E5E7EB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          boxShadow: {
+            card: '0 8px 32px rgba(0,0,0,0.06)',
+            lift: '0 20px 60px rgba(17,24,39,0.10)',
+            blue: '0 12px 30px rgba(23,105,255,0.30)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { background: #FFFBF8; color: #111827; -webkit-font-smoothing: antialiased; }
+
+    /* Light-blue marker highlight behind keywords, animated in on reveal */
+    .hl {
+      background-image: linear-gradient(#E3F0FF, #E3F0FF);
+      background-repeat: no-repeat;
+      background-position: 0 88%;
+      background-size: 0% 62%;
+      padding: 0 .12em;
+      margin: 0 -.04em;
+      border-radius: .18em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      transition: background-size 1s cubic-bezier(.2,.7,.2,1) .35s;
+    }
+    .is-visible .hl, .hl.is-visible { background-size: 100% 62%; }
+
+    /* Scroll reveal */
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: .08s; } .reveal-d2 { transition-delay: .16s; } .reveal-d3 { transition-delay: .24s; }
+
+    /* Primary button */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      height: 56px; padding: 0 2rem; border-radius: 999px;
+      background: #1769FF; color: #fff; font-weight: 700; letter-spacing: -.005em;
+      box-shadow: 0 12px 30px rgba(23,105,255,.30);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .btn-primary:hover { background: #0F55D6; transform: translateY(-2px); box-shadow: 0 18px 40px rgba(23,105,255,.38); }
+    .btn-primary .arrow { transition: transform .25s ease; }
+    .btn-primary:hover .arrow { transform: translateX(4px); }
+
+    /* Play button pulse */
+    @keyframes pulse-ring { 0% { transform: scale(.9); opacity: .7; } 100% { transform: scale(1.8); opacity: 0; } }
+    .pulse-ring::before, .pulse-ring::after {
+      content: ''; position: absolute; inset: 0; border-radius: 999px; border: 2px solid rgba(255,255,255,.6);
+      animation: pulse-ring 2.2s cubic-bezier(.2,.6,.3,1) infinite;
+    }
+    .pulse-ring::after { animation-delay: 1.1s; }
+
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee { animation: marquee 38s linear infinite; }
+
+    /* Telegram chat messages pop in one by one */
+    .chat-msg { flex-shrink: 0; }
+    .js .chat-msg { opacity: 0; transform: translateY(12px) scale(.98); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+    .js .chat-live .chat-msg { opacity: 1; transform: none; }
+
+    .tg-bg {
+      background-color: #CFE0EE;
+      background-image:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.55) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,.45) 0 2px, transparent 3px),
+        linear-gradient(160deg, #D7E7D0 0%, #CBDDEB 55%, #C9D6EE 100%);
+      background-size: 46px 46px, 62px 62px, 100% 100%;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal, .js .chat-msg { opacity: 1; transform: none; }
+      .hl { background-size: 100% 62%; }
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+
+  <!-- ============ NAV ============ -->
+  <header id="top" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" data-nav>
+    <div class="mx-auto mt-3 max-w-6xl px-4 sm:px-6">
+      <nav class="flex h-16 items-center justify-between rounded-full border border-transparent px-4 transition-all duration-300 sm:px-5" data-nav-inner>
+        <a href="#top" class="flex items-center gap-2.5" aria-label="Alisha Pathan — home">
+          <span class="block h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-white ring-2 ring-gold shadow-sm">
+            <img src="alisha_avatar_gold.png" alt="" width="36" height="36" class="h-full w-full scale-[1.12] object-cover object-center" />
+          </span>
+          <span class="font-serif text-xl font-bold tracking-tight">Alisha Pathan</span>
+        </a>
+
+        <ul class="hidden items-center gap-8 text-[15px] font-medium text-ink/70 lg:flex">
+          <li><a href="#course" class="transition hover:text-ink">Course</a></li>
+          <li><a href="#inside" class="transition hover:text-ink">What's Inside</a></li>
+          <li><a href="#about" class="transition hover:text-ink">About</a></li>
+          <li><a href="#faq" class="transition hover:text-ink">FAQ</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <a href="#join" data-join class="hidden h-11 items-center rounded-full bg-brand px-5 text-sm font-bold text-white shadow-blue transition hover:-translate-y-0.5 hover:bg-brand-dark sm:inline-flex">
+            Join Our Community — Free
+          </a>
+          <button type="button" class="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden" aria-label="Open menu" aria-expanded="false" data-menu-btn>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div class="mt-2 hidden rounded-3xl border border-line bg-white p-3 shadow-lift lg:hidden" data-menu>
+        <a href="#course" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">Course</a>
+        <a href="#inside" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">What's Inside</a>
+        <a href="#about" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">About</a>
+        <a href="#faq" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">FAQ</a>
+        <a href="#join" data-join class="btn-primary mt-2 w-full">Join Our Community — Free</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden pb-20 pt-32 sm:pt-36">
+      <!-- soft background glows -->
+      <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-10 h-[520px] w-[520px] rounded-full bg-brand-light/70 blur-3xl"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -right-32 top-72 h-[460px] w-[460px] rounded-full bg-gold-light blur-3xl"></div>
+
+      <div class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:grid lg:grid-cols-[1.05fr_1fr] lg:items-start lg:gap-16">
+
+        <!-- Left column: becomes a sticky block on desktop; on mobile its children interleave with the media -->
+        <div class="contents lg:sticky lg:top-32 lg:block">
+          <div class="order-1">
+            <span class="inline-flex items-center gap-2 rounded-full bg-brand-light px-4 py-2 text-[11px] font-bold uppercase tracking-[.08em] text-brand sm:text-xs sm:tracking-[.14em]">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-brand"></span></span>
+              Your trading community starts here
+            </span>
+
+            <h1 class="mt-6 font-serif text-[44px] font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-[68px]">
+              Learn, Trade &amp; <span class="hl text-brand">Grow Together.</span>
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink/65">
+              Join a community of traders with live trading sessions, daily Gold trade ideas, practical training, and exclusive trading tools. All with <strong class="font-semibold text-ink">no separate community membership fee.</strong>
+            </p>
+          </div>
+
+          <div class="order-3 lg:mt-9">
+            <a href="#join" data-join class="btn-primary w-full text-[17px] sm:w-auto">
+              Join Our Community <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <p class="mt-3 text-sm text-ink/50">Free access with an eligible partner-broker account. Trading carries risk.</p>
+
+            <ul class="mt-7 flex flex-wrap gap-2.5">
+              <li class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card"><span class="grid h-5 w-5 place-items-center rounded-full bg-brand text-[11px] text-white">✓</span>Live Zoom Sessions</li>
+              <li class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card"><span class="grid h-5 w-5 place-items-center rounded-full bg-gold text-[11px] text-white">✓</span>Gold Trade Ideas</li>
+              <li class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card"><span class="grid h-5 w-5 place-items-center rounded-full bg-brand text-[11px] text-white">✓</span>Training &amp; Tools</li>
+            </ul>
+
+            <dl class="mt-10 grid max-w-lg grid-cols-3 divide-x divide-line rounded-[20px] border border-line bg-white/70 py-5 text-center shadow-card backdrop-blur">
+              <div><dt class="text-xs font-medium text-ink/50">Weekly</dt><dd class="mt-1 font-serif text-2xl font-bold">Live</dd><dd class="text-xs text-ink/50">Zoom sessions</dd></div>
+              <div><dt class="text-xs font-medium text-ink/50">Daily</dt><dd class="mt-1 font-serif text-2xl font-bold">5–7</dd><dd class="text-xs text-ink/50">XAU/USD ideas</dd></div>
+              <div><dt class="text-xs font-medium text-ink/50">Membership</dt><dd class="mt-1 font-serif text-2xl font-bold text-gold">$0</dd><dd class="text-xs text-ink/50">separate fee</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Hero media: clean photo, name block below, video placeholder -->
+        <div class="order-2 lg:order-none">
+          <figure class="overflow-hidden rounded-[24px] border border-line bg-white shadow-lift">
+            <img src="alisha.jpg" alt="Alisha Pathan in a beige suit at a night waterfront in Dubai"
+                 class="h-[520px] w-full object-cover object-top sm:h-[600px]" width="800" height="962" fetchpriority="high" />
+            <figcaption class="bg-white px-6 py-8 text-center">
+              <span class="block font-serif text-[40px] font-bold leading-tight text-black sm:text-[48px]">Alisha Pathan</span>
+              <span class="mt-1 block font-serif text-[20px] italic tracking-[2px] text-gold">Your Forex Girl</span>
+            </figcaption>
+          </figure>
+
+          <!-- Video placeholder -->
+          <button type="button" data-video
+                  class="group relative mt-5 block aspect-video w-full overflow-hidden rounded-[24px] bg-[#0B1220] text-left shadow-lift">
+            <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(23,105,255,.55),transparent_45%),radial-gradient(circle_at_85%_85%,rgba(197,162,83,.45),transparent_45%)]"></div>
+            <!-- faint candlestick pattern -->
+            <svg aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 w-full opacity-25" viewBox="0 0 400 150" preserveAspectRatio="none">
+              <g stroke="#fff" stroke-width="1.2">
+                <line x1="20" y1="80" x2="20" y2="130"/><line x1="50" y1="70" x2="50" y2="120"/><line x1="80" y1="85" x2="80" y2="135"/><line x1="110" y1="60" x2="110" y2="110"/><line x1="140" y1="50" x2="140" y2="100"/><line x1="170" y1="65" x2="170" y2="105"/><line x1="200" y1="40" x2="200" y2="90"/><line x1="230" y1="30" x2="230" y2="85"/><line x1="260" y1="45" x2="260" y2="80"/><line x1="290" y1="20" x2="290" y2="70"/><line x1="320" y1="25" x2="320" y2="60"/><line x1="350" y1="10" x2="350" y2="55"/><line x1="380" y1="5" x2="380" y2="45"/>
+              </g>
+              <g>
+                <rect x="14" y="92" width="12" height="28" fill="#fff"/><rect x="44" y="82" width="12" height="26" fill="#C5A253"/><rect x="74" y="95" width="12" height="25" fill="#fff"/><rect x="104" y="72" width="12" height="28" fill="#C5A253"/><rect x="134" y="62" width="12" height="26" fill="#C5A253"/><rect x="164" y="72" width="12" height="22" fill="#fff"/><rect x="194" y="52" width="12" height="28" fill="#C5A253"/><rect x="224" y="42" width="12" height="30" fill="#C5A253"/><rect x="254" y="52" width="12" height="20" fill="#fff"/><rect x="284" y="30" width="12" height="28" fill="#C5A253"/><rect x="314" y="32" width="12" height="20" fill="#fff"/><rect x="344" y="18" width="12" height="28" fill="#C5A253"/><rect x="374" y="12" width="12" height="24" fill="#C5A253"/>
+              </g>
+            </svg>
+
+            <span class="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[.14em] text-white ring-1 ring-white/20 backdrop-blur">
+              <span class="h-1.5 w-1.5 rounded-full bg-red-500"></span> Video to follow
+            </span>
+
+            <span class="absolute inset-0 grid place-items-center">
+              <span class="pulse-ring relative grid h-20 w-20 place-items-center rounded-full bg-white shadow-2xl transition duration-300 group-hover:scale-110">
+                <svg class="ml-1 h-7 w-7 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
+              </span>
+            </span>
+
+            <span class="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-white">
+              <span>
+                <span class="block text-xs font-medium text-white/60" data-video-label>Coming soon</span>
+                <span class="block font-serif text-lg font-semibold leading-snug sm:text-xl">Watch Alisha's Live Trading Preview</span>
+              </span>
+              <span class="hidden rounded-full bg-white/10 px-3 py-1 text-xs font-semibold ring-1 ring-white/20 sm:inline">XAU/USD</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="overflow-hidden border-y border-line bg-white py-4" aria-hidden="true">
+      <div class="marquee flex w-max gap-10 whitespace-nowrap font-serif text-lg italic text-ink/60">
+        <span>Live Zoom Sessions</span><span class="text-gold">✦</span><span>Daily Gold Trade Ideas</span><span class="text-gold">✦</span><span>MetaTrader Training</span><span class="text-gold">✦</span><span>Risk Management</span><span class="text-gold">✦</span><span>Trading Psychology</span><span class="text-gold">✦</span><span>Exclusive Tools</span><span class="text-gold">✦</span><span>Learn, Trade &amp; Grow Together</span><span class="text-gold">✦</span>
+        <span>Live Zoom Sessions</span><span class="text-gold">✦</span><span>Daily Gold Trade Ideas</span><span class="text-gold">✦</span><span>MetaTrader Training</span><span class="text-gold">✦</span><span>Risk Management</span><span class="text-gold">✦</span><span>Trading Psychology</span><span class="text-gold">✦</span><span>Exclusive Tools</span><span class="text-gold">✦</span><span>Learn, Trade &amp; Grow Together</span><span class="text-gold">✦</span>
+      </div>
+    </div>
+
+    <!-- ============ WHAT'S INCLUDED ============ -->
+    <section id="course" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">What's Included</p>
+          <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+            Everything You Need to <span class="hl">Learn &amp; Trade</span> With Support
+          </h2>
+          <p class="mt-5 text-lg text-ink/60">From live coaching to trading tools, explore what's included.</p>
+        </div>
+
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group rounded-[20px] border border-line bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift reveal">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-light text-brand transition group-hover:bg-brand group-hover:text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></svg>
+            </div>
+            <span class="mt-6 inline-block rounded-full bg-cream px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ink/50">Zoom</span>
+            <h3 class="mt-3 text-lg font-bold leading-snug">Live Trading Sessions via Zoom</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink/60">Join live trading sessions with our coaches, watch the market analysed in real time, and ask questions as setups unfold.</p>
+          </article>
+
+          <article class="group rounded-[20px] border border-line bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift reveal reveal-d1">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl bg-gold-light text-gold transition group-hover:bg-gold group-hover:text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg>
+            </div>
+            <span class="mt-6 inline-block rounded-full bg-cream px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ink/50">Telegram</span>
+            <h3 class="mt-3 text-lg font-bold leading-snug">Daily Gold Trading Signals</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink/60">Approximately 5–7 XAU/USD trade ideas a day via Telegram, each with entry, stop-loss and target levels.</p>
+          </article>
+
+          <article class="group rounded-[20px] border border-line bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift reveal reveal-d2">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-light text-brand transition group-hover:bg-brand group-hover:text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/><path d="m10 7.5 4 2.5-4 2.5v-5Z"/></svg>
+            </div>
+            <span class="mt-6 inline-block rounded-full bg-cream px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ink/50">On-demand</span>
+            <h3 class="mt-3 text-lg font-bold leading-snug">Educational Video Library</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink/60">Step-by-step lessons on MetaTrader, risk management, trading psychology and building a repeatable plan.</p>
+          </article>
+
+          <article class="group rounded-[20px] border border-line bg-white p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-lift reveal reveal-d3">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl bg-gold-light text-gold transition group-hover:bg-gold group-hover:text-white">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg>
+            </div>
+            <span class="mt-6 inline-block rounded-full bg-cream px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ink/50">Members</span>
+            <h3 class="mt-3 text-lg font-bold leading-snug">Exclusive Trading Tools</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink/60">Member-only indicators, trading journals and systems to help you stay structured and disciplined.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSIDE THE COMMUNITY ============ -->
+    <section id="inside" class="scroll-mt-24 overflow-hidden py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
+        <div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">Inside Our Trading Community</p>
+          <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+            See What Happens During Our <span class="hl">Live Trading Sessions</span>
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed text-ink/65">
+            Our sessions aren't lectures — they're conversations. You'll watch Gold being analysed live, hear the reasoning behind every idea, and trade alongside people who are learning exactly what you are. Wins get celebrated, losses get reviewed, and nobody trades alone.
+          </p>
+
+          <ul class="mt-8 space-y-4">
+            <li class="flex gap-4"><span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-light text-sm font-bold text-brand">✓</span><span class="text-[16px] leading-relaxed"><strong class="font-semibold">Real-time market breakdowns</strong> — see how the coach reads XAU/USD before taking a position.</span></li>
+            <li class="flex gap-4"><span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-light text-sm font-bold text-brand">✓</span><span class="text-[16px] leading-relaxed"><strong class="font-semibold">Ask anything, live</strong> — get your questions answered during the session, not days later.</span></li>
+            <li class="flex gap-4"><span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-light text-sm font-bold text-brand">✓</span><span class="text-[16px] leading-relaxed"><strong class="font-semibold">Risk management first</strong> — position sizing, stop-losses and when <em>not</em> to trade.</span></li>
+            <li class="flex gap-4"><span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-light text-sm font-bold text-brand">✓</span><span class="text-[16px] leading-relaxed"><strong class="font-semibold">A supportive community</strong> — share progress and stay accountable in the Telegram group.</span></li>
+          </ul>
+
+          <div class="mt-8 flex gap-3 rounded-[20px] border border-gold/30 bg-gold-light/60 p-5 text-sm leading-relaxed text-ink/70">
+            <span class="text-lg" aria-hidden="true">⚠️</span>
+            <p>Messages shown are illustrative of community activity. Individual results vary, and past performance is not indicative of future results. Trade ideas are educational and are not financial advice.</p>
+          </div>
+        </div>
+
+        <!-- iPhone mockup with Telegram chat -->
+        <div class="relative mx-auto reveal reveal-d2">
+          <div aria-hidden="true" class="absolute -inset-10 rounded-full bg-gradient-to-br from-brand-light via-white to-gold-light blur-2xl"></div>
+
+          <div class="floaty absolute -left-20 top-6 z-20 hidden rounded-2xl border border-line bg-white px-4 py-3 shadow-lift sm:block">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-ink/45">Live now</p>
+            <p class="mt-0.5 flex items-center gap-2 text-sm font-bold"><span class="h-2 w-2 rounded-full bg-red-500"></span>Zoom: Gold Session</p>
+          </div>
+          <div class="floaty absolute -right-16 bottom-2 z-20 hidden rounded-2xl border border-line bg-white px-4 py-3 shadow-lift sm:block" style="animation-delay:-3s">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-ink/45">Today's ideas</p>
+            <p class="mt-0.5 text-sm font-bold"><span class="text-gold">●</span> XAU/USD × 6</p>
+          </div>
+
+          <div class="relative z-10 h-[690px] w-[320px] rounded-[54px] bg-[#1b1b1f] p-[11px] shadow-[0_40px_80px_rgba(17,24,39,.25)] ring-1 ring-black/10">
+            <div class="relative flex h-full flex-col overflow-hidden rounded-[44px] bg-white">
+              <!-- status bar + island -->
+              <div class="relative flex h-11 shrink-0 items-center justify-between bg-[#F7F7F7] px-7 text-[13px] font-semibold">
+                <span>9:41</span>
+                <span class="absolute left-1/2 top-2.5 h-[26px] w-[92px] -translate-x-1/2 rounded-full bg-black"></span>
+                <span class="flex items-center gap-1">
+                  <svg class="h-3 w-4" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                  <svg class="h-3 w-6" viewBox="0 0 26 12" fill="none"><rect x=".5" y=".5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="24" y="4" width="1.5" height="4" rx=".75" fill="currentColor" opacity=".4"/></svg>
+                </span>
+              </div>
+
+              <!-- chat header -->
+              <div class="flex shrink-0 items-center gap-3 border-b border-black/5 bg-[#F7F7F7] px-3 pb-2.5">
+                <svg class="h-5 w-5 text-[#2AABEE]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>
+                <div class="flex-1 text-center">
+                  <p class="text-[14px] font-semibold leading-tight">Alisha's Gold Room 🟡</p>
+                  <p class="text-[11px] text-[#2AABEE]">live session in progress</p>
+                </div>
+                <span class="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#E2C47E] to-gold font-serif text-xs font-bold text-white">AP</span>
+              </div>
+
+              <!-- messages -->
+              <div class="tg-bg flex flex-1 flex-col justify-end gap-2 overflow-hidden px-2.5 py-2 text-[13px] leading-snug" data-chat>
+                <div class="chat-msg max-w-[84%] rounded-2xl rounded-bl-md bg-white p-1.5 shadow-sm">
+                  <div class="overflow-hidden rounded-xl bg-[#0B1220] p-1.5">
+                    <svg viewBox="0 0 200 70" class="h-10 w-full" preserveAspectRatio="none">
+                      <polyline points="0,58 20,52 40,55 60,40 80,44 100,30 120,34 140,20 160,24 180,12 200,8" fill="none" stroke="#C5A253" stroke-width="2"/>
+                      <line x1="0" y1="44" x2="200" y2="44" stroke="#1769FF" stroke-dasharray="4 3" stroke-width="1"/>
+                      <text x="4" y="41" fill="#8DB4FF" font-size="7" font-family="Inter">ENTRY</text>
+                    </svg>
+                  </div>
+                  <div class="px-1.5 pb-0.5 pt-1.5">
+                    <p class="text-[12px] font-semibold text-gold">Coach Alisha</p>
+                    <p class="font-semibold">🟡 XAU/USD — BUY</p>
+                    <p>Entry: market · SL: 30 pips</p>
+                    <p>TP1: 30 · TP2: 60 pips</p>
+                    <p class="text-black/50">Risk max 1–2% ⚠️</p>
+                    <p class="mt-0.5 text-right text-[10px] text-black/40">20:02</p>
+                  </div>
+                </div>
+
+                <div class="chat-msg max-w-[78%] rounded-2xl rounded-bl-md bg-white px-2.5 py-1.5 shadow-sm">
+                  <p class="text-[12px] font-semibold text-gold">Coach Alisha</p>
+                  <p>TP1 hit ✅ Move SL to entry 🔒</p>
+                  <p class="text-right text-[10px] text-black/40">20:31</p>
+                </div>
+
+                <div class="chat-msg max-w-[78%] rounded-2xl rounded-bl-md bg-white px-2.5 py-1.5 shadow-sm">
+                  <p class="text-[12px] font-semibold text-[#E05A8A]">Mika R.</p>
+                  <p class="font-semibold">THANK YOU PO COACH!!! $55 🙏💛</p>
+                  <p class="text-right text-[10px] text-black/40">20:32</p>
+                </div>
+
+                <div class="chat-msg max-w-[78%] rounded-2xl rounded-bl-md bg-white px-2.5 py-1.5 shadow-sm">
+                  <p class="text-[12px] font-semibold text-[#7A5AE0]">Carlo D.</p>
+                  <p>Salamat coach Alisha! +$120 🔥</p>
+                  <p class="text-right text-[10px] text-black/40">20:35</p>
+                </div>
+
+                <div class="chat-msg ml-auto max-w-[75%] rounded-2xl rounded-br-md bg-[#E1FEC6] px-2.5 py-1.5 shadow-sm">
+                  <p>See you all on tonight's Zoom! 🙌</p>
+                  <p class="text-right text-[10px] text-[#4FAE4E]">20:36 ✓✓</p>
+                </div>
+              </div>
+
+              <!-- input bar -->
+              <div class="flex shrink-0 items-center gap-2 border-t border-black/5 bg-[#F7F7F7] px-3 pb-6 pt-2">
+                <svg class="h-6 w-6 text-black/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m21 11-8.5 8.5a5 5 0 0 1-7-7L14 4a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4L15.5 7"/></svg>
+                <div class="h-8 flex-1 rounded-full border border-black/10 bg-white px-3 text-[13px] leading-8 text-black/35">Message</div>
+                <svg class="h-6 w-6 text-black/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW FREE ACCESS WORKS ============ -->
+    <section id="how" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[24px] bg-brand-wash px-6 py-14 sm:px-12 lg:px-16">
+          <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/70 blur-2xl"></div>
+
+          <div class="relative grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+            <div class="reveal">
+              <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">How Free Access Works</p>
+              <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">Yes, You Can <span class="hl bg-white">Join for Free.</span></h2>
+              <p class="mt-6 text-lg leading-relaxed text-ink/65">
+                There's no separate community membership fee. Access is unlocked when you open an account with one of our partner brokers. We're compensated through that broker partnership — which is how the community, sessions and tools stay free for you.
+              </p>
+              <a href="#join" data-join class="btn-primary mt-8">Get Started <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+
+            <ol class="relative space-y-4">
+              <li class="flex gap-5 rounded-[20px] border border-white bg-white p-6 shadow-card reveal">
+                <span class="font-serif text-4xl font-bold leading-none text-brand">01</span>
+                <div>
+                  <h3 class="text-lg font-bold">Get Started</h3>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-ink/60">Tap "Join Our Community" and message our team. We'll walk you through every step — no experience needed.</p>
+                </div>
+              </li>
+              <li class="flex gap-5 rounded-[20px] border border-white bg-white p-6 shadow-card reveal reveal-d1">
+                <span class="font-serif text-4xl font-bold leading-none text-brand">02</span>
+                <div>
+                  <h3 class="text-lg font-bold">Broker Connection</h3>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-ink/60">Open and verify an account with an eligible partner broker. Broker terms and minimum deposit requirements may apply.</p>
+                </div>
+              </li>
+              <li class="flex gap-5 rounded-[20px] border border-white bg-white p-6 shadow-card reveal reveal-d2">
+                <span class="font-serif text-4xl font-bold leading-none text-gold">03</span>
+                <div>
+                  <h3 class="text-lg font-bold">Access Benefits</h3>
+                  <p class="mt-1.5 text-[15px] leading-relaxed text-ink/60">Get added to the Telegram group, live Zoom sessions, the video library and exclusive trading tools.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <p class="relative mt-10 border-t border-brand/10 pt-6 text-sm leading-relaxed text-ink/55">
+            <strong class="font-semibold text-ink/70">Risk notice:</strong> Trading forex and CFDs, including Gold (XAU/USD), involves significant risk and may not be suitable for everyone. You can lose some or all of your deposited capital. Only trade with money you can afford to lose.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MEET ALISHA ============ -->
+    <section id="about" class="scroll-mt-24 py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[420px_1fr] lg:gap-20">
+        <figure class="mx-auto w-full max-w-[400px] reveal">
+          <div class="relative">
+            <div aria-hidden="true" class="absolute -inset-3 rotate-[-3deg] rounded-[32px] bg-gold-light"></div>
+            <div class="relative overflow-hidden rounded-[28px] border border-line bg-white shadow-lift">
+              <img src="alisha.jpg" alt="Portrait of Alisha Pathan" class="aspect-square w-full object-cover object-[50%_12%]" loading="lazy" width="800" height="962" />
+              <figcaption class="bg-white px-6 py-6 text-center">
+                <span class="block font-serif text-3xl font-bold text-black">Alisha Pathan</span>
+                <span class="mt-1 block font-serif text-lg italic tracking-[2px] text-gold">Your Forex Girl</span>
+              </figcaption>
+            </div>
+          </div>
+        </figure>
+
+        <div class="reveal reveal-d1">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">About</p>
+          <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+            Meet Alisha Pathan — <span class="italic text-gold">Your Forex Girl</span>
+          </h2>
+          <p class="mt-6 text-lg leading-relaxed text-ink/65">
+            From beginner to funded trader, Alisha now teaches others how to build freedom through Gold trading. She knows what it's like to start from zero — the confusion, the blown accounts, the self-doubt — and built this community so no one has to figure it out alone.
+          </p>
+
+          <blockquote class="mt-8 border-l-2 border-gold pl-5 font-serif text-2xl italic leading-snug text-ink/80">
+            “Trading isn't about being right every time. It's about discipline, protecting your capital, and growing together.”
+          </blockquote>
+
+          <div class="mt-9 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-[20px] border border-line bg-white p-5 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-wider text-ink/45">Journey</p>
+              <p class="mt-1 font-semibold">Beginner → Funded</p>
+            </div>
+            <div class="rounded-[20px] border border-line bg-white p-5 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-wider text-ink/45">Focus</p>
+              <p class="mt-1 font-semibold">Gold · XAU/USD</p>
+            </div>
+            <div class="rounded-[20px] border border-line bg-white p-5 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-wider text-ink/45">Based in</p>
+              <p class="mt-1 font-semibold">Dubai, UAE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">FAQ</p>
+          <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">Questions, <span class="hl">Answered</span></h2>
+        </div>
+
+        <div class="mt-12 space-y-3">
+          <details class="group rounded-[20px] border border-line bg-white px-6 shadow-card reveal" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-semibold">Is the community really free?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-light text-xl text-brand transition">+</span></summary>
+            <p class="pb-6 leading-relaxed text-ink/60">Yes — there's no separate membership fee. Access comes with an eligible account at one of our partner brokers. Your trading capital stays in your own broker account.</p>
+          </details>
+          <details class="group rounded-[20px] border border-line bg-white px-6 shadow-card reveal">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-semibold">Do I need trading experience?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-light text-xl text-brand transition">+</span></summary>
+            <p class="pb-6 leading-relaxed text-ink/60">Not at all. The video library starts with the basics — setting up MetaTrader, placing trades and managing risk — and the live sessions are beginner-friendly.</p>
+          </details>
+          <details class="group rounded-[20px] border border-line bg-white px-6 shadow-card reveal">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-semibold">How are the Gold trade ideas shared?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-light text-xl text-brand transition">+</span></summary>
+            <p class="pb-6 leading-relaxed text-ink/60">Approximately 5–7 XAU/USD ideas are posted each trading day in our private Telegram group, with entry, stop-loss and take-profit levels. Always apply your own risk management.</p>
+          </details>
+          <details class="group rounded-[20px] border border-line bg-white px-6 shadow-card reveal">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-semibold">When are the live Zoom sessions?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-light text-xl text-brand transition">+</span></summary>
+            <p class="pb-6 leading-relaxed text-ink/60">Sessions run regularly each week, and the schedule is shared inside the community. Replays and key lessons are added to the library.</p>
+          </details>
+          <details class="group rounded-[20px] border border-line bg-white px-6 shadow-card reveal">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[17px] font-semibold">Is profit guaranteed?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-light text-xl text-brand transition">+</span></summary>
+            <p class="pb-6 leading-relaxed text-ink/60">No. Trading carries real risk and losses are part of it. We focus on education, discipline and risk management — never guaranteed returns.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section id="join" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[24px] bg-ink px-6 py-20 text-center text-white sm:px-12 reveal">
+          <div aria-hidden="true" class="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-brand/40 blur-3xl"></div>
+          <div aria-hidden="true" class="absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-gold/30 blur-3xl"></div>
+
+          <div class="relative mx-auto max-w-2xl">
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-gold ring-1 ring-white/15">✦ No separate membership fee</span>
+            <h2 class="mt-6 font-serif text-4xl font-bold leading-[1.08] tracking-tight sm:text-6xl">Ready to Join <span class="italic text-gold">Our Community?</span></h2>
+            <p class="mx-auto mt-6 max-w-lg text-lg text-white/65">Live sessions, daily Gold ideas, training and tools — and a community that grows together.</p>
+            <a href="#join" data-join class="btn-primary mt-10 text-[17px]">Join Our Community <span class="arrow" aria-hidden="true">→</span></a>
+            <p class="mt-4 text-sm text-white/45">Free access with an eligible partner-broker account. Trading carries risk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
+        <div>
+          <a href="#top" class="flex items-center gap-2.5">
+            <span class="block h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-white ring-2 ring-gold shadow-sm">
+              <img src="alisha_avatar_gold.png" alt="" width="36" height="36" loading="lazy" class="h-full w-full scale-[1.12] object-cover object-center" />
+            </span>
+            <span class="font-serif text-xl font-bold">Alisha Pathan</span>
+          </a>
+          <p class="mt-2 font-serif italic tracking-[2px] text-gold">Your Forex Girl</p>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink/55">Learn, trade &amp; grow together — a Gold trading community built on education and discipline.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/40">Explore</p>
+          <ul class="mt-4 space-y-2.5 text-[15px] text-ink/70">
+            <li><a href="#course" class="hover:text-brand">Course</a></li>
+            <li><a href="#inside" class="hover:text-brand">What's Inside</a></li>
+            <li><a href="#about" class="hover:text-brand">About</a></li>
+            <li><a href="#faq" class="hover:text-brand">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/40">Dubai Office</p>
+          <address class="mt-4 text-[15px] not-italic leading-relaxed text-ink/70">
+            Lake Central Tower 2<br />Marasi Drive, Business Bay<br />Dubai, United Arab Emirates
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 rounded-[20px] border border-line bg-cream p-6 text-xs leading-relaxed text-ink/55">
+        <p class="font-bold uppercase tracking-wider text-ink/70">Risk Disclosure</p>
+        <p class="mt-2">Trading foreign exchange (forex), contracts for difference (CFDs) and precious metals such as Gold (XAU/USD) on margin carries a high level of risk and may not be suitable for all investors. Leverage can work against you as well as for you, and you may lose some or all of your initial investment. Do not trade with money you cannot afford to lose.</p>
+        <p class="mt-2">All content, trade ideas, live sessions and tools provided by Alisha Pathan and this community are for educational and informational purposes only and do not constitute financial, investment or trading advice. Past performance is not indicative of future results. Testimonials and community messages may not be representative of other members' experiences. Free community access is provided through a partnership with third-party brokers, from which we may receive compensation. Please seek independent advice and read each broker's terms before opening an account.</p>
+      </div>
+
+      <div class="mt-8 flex flex-col items-center justify-between gap-3 text-sm text-ink/45 sm:flex-row">
+        <p>© <span data-year>2026</span> Alisha Pathan. All rights reserved.</p>
+        <a href="#top" class="hover:text-brand">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set your real sign-up link here (Telegram, WhatsApp, or broker partner link)
+    const JOIN_URL = '#join';
+    if (JOIN_URL !== '#join') document.querySelectorAll('[data-join]').forEach(a => { a.href = JOIN_URL; a.target = '_blank'; a.rel = 'noopener'; });
+
+    document.querySelector('[data-year]').textContent = new Date().getFullYear();
+
+    // Nav turns into a floating pill after scrolling
+    const navInner = document.querySelector('[data-nav-inner]');
+    const onScroll = () => {
+      const scrolled = window.scrollY > 24;
+      navInner.classList.toggle('bg-white/85', scrolled);
+      navInner.classList.toggle('backdrop-blur-xl', scrolled);
+      navInner.classList.toggle('border-line', scrolled);
+      navInner.classList.toggle('shadow-card', scrolled);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('[data-menu-btn]');
+    const menu = document.querySelector('[data-menu]');
+    menuBtn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+
+    // Video placeholder
+    const videoBtn = document.querySelector('[data-video]');
+    videoBtn.addEventListener('click', () => {
+      document.querySelector('[data-video-label]').textContent = 'Preview coming soon — stay tuned ✨';
+    });
+
+    // Scroll reveal + highlight sweep
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .hl').forEach(el => io.observe(el));
+
+    // Telegram messages appear one by one
+    const chat = document.querySelector('[data-chat]');
+    const msgs = chat.querySelectorAll('.chat-msg');
+    msgs.forEach((m, i) => m.style.transitionDelay = (i * 0.45) + 's');
+    new IntersectionObserver((entries, obs) => {
+      if (entries[0].isIntersecting) { chat.classList.add('chat-live'); obs.disconnect(); }
+    }, { threshold: 0.35 }).observe(chat);
+  </script>
+</body>
+</html>
