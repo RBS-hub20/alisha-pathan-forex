@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Join — Alisha Pathan Trading Community</title>
+  <meta name="description" content="Follow 5 simple steps to get free access to Alisha Pathan's live trading sessions, Gold trading signals, educational videos and exclusive trading tools." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFFBF8',
+            ink: '#111827',
+            brand: { DEFAULT: '#1769FF', dark: '#0F55D6', light: '#E3F0FF', wash: '#EFF6FF' },
+            gold: { DEFAULT: '#C5A253', light: '#F6EEDC' },
+            line: '#E5E7EB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+          },
+          boxShadow: {
+            card: '0 8px 32px rgba(0,0,0,0.06)',
+            lift: '0 20px 60px rgba(17,24,39,0.10)',
+            blue: '0 12px 30px rgba(23,105,255,0.30)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { background: #FFFBF8; color: #111827; -webkit-font-smoothing: antialiased; }
+
+    .hl {
+      background-image: linear-gradient(#E3F0FF, #E3F0FF);
+      background-repeat: no-repeat;
+      background-position: 0 88%;
+      background-size: 0% 62%;
+      padding: 0 .12em;
+      margin: 0 -.04em;
+      border-radius: .18em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      transition: background-size 1s cubic-bezier(.2,.7,.2,1) .35s;
+    }
+    .hl.is-visible { background-size: 100% 62%; }
+
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      height: 56px; padding: 0 2rem; border-radius: 999px;
+      background: #1769FF; color: #fff; font-weight: 700; letter-spacing: -.005em;
+      box-shadow: 0 12px 30px rgba(23,105,255,.30);
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .btn-primary:hover { background: #0F55D6; transform: translateY(-2px); box-shadow: 0 18px 40px rgba(23,105,255,.38); }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      height: 56px; padding: 0 2rem; border-radius: 999px;
+      background: #fff; color: #111827; font-weight: 700; border: 1px solid #E5E7EB;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .btn-outline:hover { transform: translateY(-2px); border-color: #1769FF; box-shadow: 0 12px 30px rgba(23,105,255,.12); }
+
+    /* Vertical timeline rail behind the step numbers */
+    @media (min-width: 640px) {
+      .rail::before {
+        content: ''; position: absolute; left: 27px; top: 56px; bottom: 56px; width: 2px;
+        background: linear-gradient(#1769FF, #C5A253);
+        opacity: .25;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+      .hl { background-size: 100% 62%; }
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+
+  <!-- ============ NAV ============ -->
+  <header id="top" class="fixed inset-x-0 top-0 z-50" data-nav>
+    <div class="mx-auto mt-3 max-w-6xl px-4 sm:px-6">
+      <nav class="flex h-16 items-center justify-between rounded-full border border-transparent px-4 transition-all duration-300 sm:px-5" data-nav-inner>
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="Alisha Pathan — home">
+          <span class="block h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-white ring-2 ring-gold shadow-sm">
+            <img src="alisha_avatar_gold.png" alt="" width="36" height="36" class="h-full w-full scale-[1.12] object-cover object-center" />
+          </span>
+          <span class="font-serif text-xl font-bold tracking-tight">Alisha Pathan</span>
+        </a>
+
+        <ul class="hidden items-center gap-8 text-[15px] font-medium text-ink/70 lg:flex">
+          <li><a href="index.html#course" class="transition hover:text-ink">Course</a></li>
+          <li><a href="index.html#inside" class="transition hover:text-ink">What's Inside</a></li>
+          <li><a href="index.html#about" class="transition hover:text-ink">About</a></li>
+          <li><a href="index.html#faq" class="transition hover:text-ink">FAQ</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <a href="#steps" class="hidden h-11 items-center rounded-full bg-brand px-5 text-sm font-bold text-white shadow-blue transition hover:-translate-y-0.5 hover:bg-brand-dark sm:inline-flex">
+            Join Our Community — Free
+          </a>
+          <button type="button" class="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden" aria-label="Open menu" aria-expanded="false" data-menu-btn>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mt-2 hidden rounded-3xl border border-line bg-white p-3 shadow-lift lg:hidden" data-menu>
+        <a href="index.html#course" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">Course</a>
+        <a href="index.html#inside" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">What's Inside</a>
+        <a href="index.html#about" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">About</a>
+        <a href="index.html#faq" class="block rounded-2xl px-4 py-3 font-medium hover:bg-cream">FAQ</a>
+        <a href="#steps" class="btn-primary mt-2 w-full">Join Our Community — Free</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HEADER ============ -->
+    <section class="relative overflow-hidden pb-20 pt-32 sm:pt-40">
+      <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-0 h-[480px] w-[480px] rounded-full bg-brand-light/70 blur-3xl"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -right-40 top-40 h-[420px] w-[420px] rounded-full bg-gold-light blur-3xl"></div>
+
+      <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <span class="inline-flex items-center gap-2 rounded-full bg-brand-light px-4 py-2 text-[11px] font-bold uppercase tracking-[.08em] text-brand sm:text-xs sm:tracking-[.14em]">
+          <span class="h-2 w-2 rounded-full bg-brand"></span>
+          Free Trading Community Access
+        </span>
+        <h1 class="mt-6 font-serif text-[42px] font-bold leading-[1.05] tracking-tight sm:text-6xl">
+          How to Join Our <span class="hl text-brand">Trading Community</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/65">
+          Follow these 5 simple steps to get access to our live trading sessions, Gold trading signals, educational videos, and exclusive trading tools.
+        </p>
+
+        <!-- step jump-links -->
+        <ol class="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-2">
+          <li><a href="#step-1" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card transition hover:border-brand"><span class="font-serif text-brand">01</span>Register</a></li>
+          <li><a href="#step-2" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card transition hover:border-brand"><span class="font-serif text-brand">02</span>Fund</a></li>
+          <li><a href="#step-3" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card transition hover:border-brand"><span class="font-serif text-brand">03</span>Bonus</a></li>
+          <li><a href="#step-4" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card transition hover:border-brand"><span class="font-serif text-brand">04</span>Apply</a></li>
+          <li><a href="#step-5" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold shadow-card transition hover:border-brand"><span class="font-serif text-gold">05</span>Get Access</a></li>
+        </ol>
+      </div>
+
+      <!-- No-fee card -->
+      <div class="relative mx-auto mt-14 max-w-5xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[24px] bg-brand-wash p-7 sm:p-12">
+          <div aria-hidden="true" class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/70 blur-2xl"></div>
+          <div class="relative grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+            <div>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.12em] text-brand shadow-card">
+                <span class="grid h-5 w-5 place-items-center rounded-full bg-brand text-[11px] text-white">✓</span>
+                No Community Membership Fee
+              </span>
+              <h2 class="mt-5 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">Join Our Community <span class="italic text-gold">for Free.</span></h2>
+              <p class="mt-5 text-[17px] leading-relaxed text-ink/70">
+                Get access to our live trading sessions, daily Gold trading signals, educational videos, and exclusive trading tools without paying a separate membership fee. To qualify, create and fund your trading account with TradeQuo, follow the instructions below, and submit your community application.
+              </p>
+              <p class="mt-4 text-sm leading-relaxed text-ink/55">
+                TradeQuo compensates us for eligible referred trading activity, helping fund these community resources. Broker charges and trading risks still apply.
+              </p>
+            </div>
+
+            <ul class="grid gap-3">
+              <li class="flex items-center gap-3 rounded-[20px] bg-white p-4 shadow-card"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-light text-brand"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></svg></span><span class="font-semibold">Live trading sessions</span></li>
+              <li class="flex items-center gap-3 rounded-[20px] bg-white p-4 shadow-card"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gold-light text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg></span><span class="font-semibold">Daily Gold trading signals</span></li>
+              <li class="flex items-center gap-3 rounded-[20px] bg-white p-4 shadow-card"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-light text-brand"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="m10 7.5 4 2.5-4 2.5v-5Z"/></svg></span><span class="font-semibold">Educational videos</span></li>
+              <li class="flex items-center gap-3 rounded-[20px] bg-white p-4 shadow-card"><span class="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gold-light text-gold"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/></svg></span><span class="font-semibold">Exclusive trading tools</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5 STEPS ============ -->
+    <section id="steps" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="text-center reveal">
+          <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">Step-by-Step</p>
+          <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">Complete These <span class="hl">5 Easy Steps</span></h2>
+        </div>
+
+        <ol class="rail relative mt-14 space-y-6">
+
+          <!-- 01 -->
+          <li id="step-1" class="relative scroll-mt-28 sm:pl-20 reveal">
+            <span class="absolute left-0 top-7 hidden h-14 w-14 place-items-center rounded-full bg-brand font-serif text-xl font-bold text-white shadow-blue sm:grid">01</span>
+            <article class="rounded-[24px] border border-line bg-white p-6 shadow-card sm:p-9">
+              <p class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-brand"><span class="font-serif text-lg sm:hidden">01</span>Account Registration</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold leading-snug sm:text-3xl">Create Your TradeQuo Account</h3>
+              <p class="mt-3 leading-relaxed text-ink/65">First, register a trading account with TradeQuo using the button below. Complete the registration and verification process.</p>
+              <div class="mt-5 flex gap-3 rounded-[20px] bg-brand-wash p-4 text-[15px] leading-relaxed">
+                <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-xs font-bold text-white">!</span>
+                <p><strong class="font-semibold">Important:</strong> Use our registration link so your account is connected to our community referral.</p>
+              </div>
+              <a href="#" data-link="TRADEQUO_LINK" class="btn-primary mt-6 w-full sm:w-auto">Create Your TradeQuo Account <span aria-hidden="true">↗</span></a>
+            </article>
+          </li>
+
+          <!-- 02 -->
+          <li id="step-2" class="relative scroll-mt-28 sm:pl-20 reveal">
+            <span class="absolute left-0 top-7 hidden h-14 w-14 place-items-center rounded-full bg-brand font-serif text-xl font-bold text-white shadow-blue sm:grid">02</span>
+            <article class="rounded-[24px] border border-line bg-white p-6 shadow-card sm:p-9">
+              <p class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-brand"><span class="font-serif text-lg sm:hidden">02</span>Fund Your Trading Account</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold leading-snug sm:text-3xl">Deposit at Least $300 USD</h3>
+              <div class="mt-3 grid gap-6 md:grid-cols-[1fr_220px] md:items-center">
+                <p class="leading-relaxed text-ink/65">Once your account is ready, log in to your TradeQuo dashboard and deposit at least $300 USD. This is the minimum initial funding requirement, set to support disciplined money management when trading Gold (XAU/USD).</p>
+                <div class="rounded-[20px] border border-gold/40 bg-gradient-to-br from-gold-light to-white p-5 text-center">
+                  <p class="font-serif text-4xl font-bold">$300 <span class="text-lg font-semibold text-ink/60">USD</span></p>
+                  <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-gold">Minimum Initial Deposit</p>
+                </div>
+              </div>
+              <div class="mt-5 rounded-[20px] border border-line bg-cream p-4 text-[15px] leading-relaxed text-ink/70">
+                <p><strong class="font-semibold text-ink">Note:</strong> After depositing, transfer the funds to your live MetaTrader 5 (MT5) account and save a screenshot of the completed deposit — you'll need it for your application. The deposit amount alone does not determine safe position sizing.</p>
+              </div>
+            </article>
+          </li>
+
+          <!-- 03 -->
+          <li id="step-3" class="relative scroll-mt-28 sm:pl-20 reveal">
+            <span class="absolute left-0 top-7 hidden h-14 w-14 place-items-center rounded-full bg-brand font-serif text-xl font-bold text-white shadow-blue sm:grid">03</span>
+            <article class="rounded-[24px] border border-line bg-white p-6 shadow-card sm:p-9">
+              <p class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-brand"><span class="font-serif text-lg sm:hidden">03</span>Deposit Bonus Promotion</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold leading-snug sm:text-3xl">Claim Your 150% Deposit Bonus</h3>
+              <p class="mt-3 leading-relaxed text-ink/65">After your deposit has been transferred to your live MT5 account, visit the TradeQuo promotion page. Use the promo code below to request the 150% deposit bonus, subject to eligibility.</p>
+
+              <!-- promo code -->
+              <div class="mt-6 flex flex-col gap-4 rounded-[20px] border-2 border-dashed border-brand/40 bg-brand-wash p-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/50">Promo Code</p>
+                  <p class="mt-1 font-mono text-3xl font-bold tracking-[.12em] text-brand" data-code>SUPERBOOST</p>
+                </div>
+                <button type="button" data-copy class="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-bold text-white transition hover:-translate-y-0.5">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                  <span data-copy-label>Copy Code</span>
+                </button>
+              </div>
+
+              <!-- example -->
+              <div class="mt-5 rounded-[20px] border border-line p-5">
+                <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/50">Example</p>
+                <div class="mt-3 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2 text-center sm:gap-4">
+                  <div class="rounded-2xl bg-cream px-2 py-4"><p class="font-serif text-2xl font-bold sm:text-3xl">$300</p><p class="mt-1 text-[11px] font-medium text-ink/55 sm:text-xs">Your Deposit</p></div>
+                  <span class="font-serif text-2xl text-ink/40">+</span>
+                  <div class="rounded-2xl bg-gold-light px-2 py-4"><p class="font-serif text-2xl font-bold text-gold sm:text-3xl">$450</p><p class="mt-1 text-[11px] font-medium text-ink/55 sm:text-xs">150% Bonus</p></div>
+                  <span class="font-serif text-2xl text-ink/40">=</span>
+                  <div class="rounded-2xl bg-brand-light px-2 py-4"><p class="font-serif text-2xl font-bold text-brand sm:text-3xl">$750</p><p class="mt-1 text-[11px] font-medium text-ink/55 sm:text-xs">Deposit + Bonus Credit</p></div>
+                </div>
+                <p class="mt-4 text-sm leading-relaxed text-ink/55"><strong class="font-semibold text-ink/70">Note:</strong> The bonus is promotional trading credit, not withdrawable cash. TradeQuo's terms and conditions apply.</p>
+              </div>
+
+              <a href="#" data-link="BONUS_LINK" class="btn-primary mt-6 w-full sm:w-auto">Claim Your Deposit Bonus <span aria-hidden="true">↗</span></a>
+
+              <div class="mt-5 flex gap-3 rounded-[20px] border border-amber-200 bg-amber-50 p-4 text-[15px] leading-relaxed text-amber-900">
+                <span aria-hidden="true">⚠️</span>
+                <p><strong class="font-semibold">Warning:</strong> Enter your correct live MT5 account number and verify that the SUPERBOOST code is still valid before submitting your bonus request.</p>
+              </div>
+            </article>
+          </li>
+
+          <!-- 04 -->
+          <li id="step-4" class="relative scroll-mt-28 sm:pl-20 reveal">
+            <span class="absolute left-0 top-7 hidden h-14 w-14 place-items-center rounded-full bg-brand font-serif text-xl font-bold text-white shadow-blue sm:grid">04</span>
+            <article class="rounded-[24px] border border-line bg-white p-6 shadow-card sm:p-9">
+              <p class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-brand"><span class="font-serif text-lg sm:hidden">04</span>Community Verification</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold leading-snug sm:text-3xl">Submit Your Community Application</h3>
+              <p class="mt-3 leading-relaxed text-ink/65">After your account setup and funding are complete, fill in the community application form. Have these ready:</p>
+
+              <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+                <li class="flex items-start gap-3 rounded-2xl bg-cream p-4"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-light text-xs font-bold text-brand">✓</span><span>Your full name</span></li>
+                <li class="flex items-start gap-3 rounded-2xl bg-cream p-4"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-light text-xs font-bold text-brand">✓</span><span>Your contact information</span></li>
+                <li class="flex items-start gap-3 rounded-2xl bg-cream p-4"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-light text-xs font-bold text-brand">✓</span><span>Your correct email address</span></li>
+                <li class="flex items-start gap-3 rounded-2xl bg-cream p-4"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-light text-xs font-bold text-brand">✓</span><span>Your MT5 account ID</span></li>
+                <li class="flex items-start gap-3 rounded-2xl bg-cream p-4 sm:col-span-2"><span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-light text-xs font-bold text-brand">✓</span><span>A screenshot of your completed deposit inside your TradeQuo account</span></li>
+              </ul>
+
+              <div class="mt-5 flex gap-3 rounded-[20px] border border-red-200 bg-red-50 p-4 text-[15px] leading-relaxed text-red-900">
+                <svg class="mt-0.5 h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="M12 8v4M12 16h.01"/></svg>
+                <p><strong class="font-semibold">Security reminder:</strong> Never submit your MT5 password, OTP codes, or payment card details. Only upload the information requested, and hide any sensitive details in your screenshots.</p>
+              </div>
+
+              <a href="#" data-link="APPLICATION_LINK" class="btn-primary mt-6 w-full sm:w-auto">Submit Community Application <span aria-hidden="true">↗</span></a>
+            </article>
+          </li>
+
+          <!-- 05 -->
+          <li id="step-5" class="relative scroll-mt-28 sm:pl-20 reveal">
+            <span class="absolute left-0 top-7 hidden h-14 w-14 place-items-center rounded-full bg-gold font-serif text-xl font-bold text-white shadow-lift sm:grid">05</span>
+            <article class="rounded-[24px] border border-line bg-white p-6 shadow-card sm:p-9">
+              <p class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.16em] text-gold"><span class="font-serif text-lg sm:hidden">05</span>Application Review</p>
+              <h3 class="mt-2 font-serif text-2xl font-bold leading-snug sm:text-3xl">Receive Your Access Instructions</h3>
+              <div class="mt-3 grid gap-6 md:grid-cols-[1fr_220px] md:items-center">
+                <p class="leading-relaxed text-ink/65">Our team will review and verify your application. Once approved, you'll receive an email with your community access instructions.</p>
+                <div class="rounded-[20px] border border-brand/20 bg-brand-wash p-5 text-center">
+                  <p class="font-serif text-4xl font-bold text-brand">24–48 <span class="text-lg font-semibold text-ink/60">hrs</span></p>
+                  <p class="mt-1 text-xs font-bold uppercase tracking-[.14em] text-ink/55">Expected Review Time</p>
+                </div>
+              </div>
+              <div class="mt-5 rounded-[20px] border border-line bg-cream p-4 text-[15px] leading-relaxed text-ink/70">
+                <p><strong class="font-semibold text-ink">Note:</strong> Check your inbox, spam and promotions folders. If you haven't received an email, contact us through Telegram support below.</p>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ VIDEO TUTORIAL ============ -->
+    <section class="py-20">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[24px] bg-[#0B1220] px-6 py-14 text-white sm:px-12 reveal">
+          <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(23,105,255,.5),transparent_45%),radial-gradient(circle_at_90%_90%,rgba(197,162,83,.4),transparent_45%)]"></div>
+          <div class="relative grid items-center gap-10 md:grid-cols-[auto_1fr]">
+            <span class="mx-auto grid h-24 w-24 place-items-center rounded-full bg-white shadow-2xl md:mx-0">
+              <svg class="ml-1 h-9 w-9 text-brand" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg>
+            </span>
+            <div class="text-center md:text-left">
+              <p class="text-xs font-bold uppercase tracking-[.18em] text-gold">Video Tutorial</p>
+              <h2 class="mt-3 font-serif text-3xl font-bold leading-tight sm:text-4xl">Need a More Detailed Walkthrough?</h2>
+              <p class="mt-4 max-w-xl text-white/70 md:max-w-none">Watch my complete YouTube guide where I walk you through each step — from registering your TradeQuo account and funding it, to claiming your bonus and submitting your community application.</p>
+              <a href="#" data-link="VIDEO_LINK" class="btn-primary mt-7 w-full sm:w-auto"><span aria-hidden="true">▶</span> Watch the Complete Video Guide <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMMUNITY ASSISTANCE ============ -->
+    <section id="support" class="scroll-mt-24 py-20">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 reveal">
+        <p class="text-xs font-bold uppercase tracking-[.18em] text-brand">Community Assistance</p>
+        <h2 class="mt-4 font-serif text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">Have Questions? <span class="hl">Chat With Us.</span></h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-ink/60">Need assistance with registration, deposits, the promotion, or your application? Contact us directly through Telegram.</p>
+
+        <div class="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <a href="#" data-link="TELEGRAM_SUPPORT" class="btn-primary">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1-1 .2-1.5l18.8-7.2c.9-.3 1.6.2 1.4 1.5Z"/></svg>
+            Chat Support on Telegram <span aria-hidden="true">↗</span>
+          </a>
+          <a href="#" data-link="TELEGRAM_GROUP" class="btn-outline">
+            Join Our Free Telegram Group <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-ink/45" data-telegram-handle hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-line bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
+        <div>
+          <a href="index.html" class="flex items-center gap-2.5">
+            <span class="block h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-white ring-2 ring-gold shadow-sm">
+              <img src="alisha_avatar_gold.png" alt="" width="36" height="36" loading="lazy" class="h-full w-full scale-[1.12] object-cover object-center" />
+            </span>
+            <span class="font-serif text-xl font-bold">Alisha Pathan</span>
+          </a>
+          <p class="mt-2 font-serif italic tracking-[2px] text-gold">Your Forex Girl</p>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-ink/55">Learn, trade &amp; grow together — a Gold trading community built on education and discipline.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/40">Explore</p>
+          <ul class="mt-4 space-y-2.5 text-[15px] text-ink/70">
+            <li><a href="index.html#course" class="hover:text-brand">Course</a></li>
+            <li><a href="index.html#inside" class="hover:text-brand">What's Inside</a></li>
+            <li><a href="index.html#about" class="hover:text-brand">About</a></li>
+            <li><a href="index.html#faq" class="hover:text-brand">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-ink/40">Dubai Office</p>
+          <address class="mt-4 text-[15px] not-italic leading-relaxed text-ink/70">
+            Lake Central Tower 2<br />Marasi Drive, Business Bay<br />Dubai, United Arab Emirates
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 rounded-[20px] border border-line bg-cream p-6 text-xs leading-relaxed text-ink/55">
+        <p class="font-bold uppercase tracking-wider text-ink/70">Risk Disclosure</p>
+        <p class="mt-2">Trading Forex, Gold, and CFDs involves substantial financial risk, including possible loss of deposited capital. Promotional bonuses offered by TradeQuo are subject to eligibility, availability, and the broker's terms. Bonuses are not guaranteed profits or withdrawable cash. Only trade with money you can afford to lose.</p>
+        <p class="mt-2">All content, trade ideas, live sessions and tools provided by Alisha Pathan and this community are for educational and informational purposes only and do not constitute financial, investment or trading advice. Past performance is not indicative of future results. Free community access is provided through a partnership with TradeQuo, from which we may receive compensation. Please seek independent advice and read the broker's terms before opening an account.</p>
+      </div>
+
+      <div class="mt-8 flex flex-col items-center justify-between gap-3 text-sm text-ink/45 sm:flex-row">
+        <p>© <span data-year>2026</span> Alisha Pathan. All rights reserved.</p>
+        <a href="#top" class="hover:text-brand">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- small toast for links that aren't set yet -->
+  <div class="pointer-events-none fixed inset-x-0 bottom-6 z-50 flex justify-center px-4">
+    <p class="translate-y-4 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white opacity-0 shadow-lift transition duration-300" data-toast>Link coming soon ✨</p>
+  </div>
+
+  <script>
+    // Set your real links here — any left as '#' show a "coming soon" toast when clicked
+    const TRADEQUO_LINK = '#';
+    const BONUS_LINK = '#';
+    const APPLICATION_LINK = '#';
+    const VIDEO_LINK = '#';
+    const TELEGRAM_SUPPORT = '#'; // e.g. 'https://t.me/alisha_pathan_forex' once that handle is registered
+    const TELEGRAM_GROUP = '#';   // e.g. 'https://t.me/alisha_pathan_forex_group' once that group exists
+
+    const LINKS = { TRADEQUO_LINK, BONUS_LINK, APPLICATION_LINK, VIDEO_LINK, TELEGRAM_SUPPORT, TELEGRAM_GROUP };
+
+    const toast = document.querySelector('[data-toast]');
+    let toastTimer;
+    const showToast = (text) => {
+      toast.textContent = text;
+      toast.classList.remove('opacity-0', 'translate-y-4');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('opacity-0', 'translate-y-4'), 2200);
+    };
+
+    document.querySelectorAll('[data-link]').forEach(a => {
+      const url = LINKS[a.dataset.link];
+      if (url && url !== '#') {
+        a.href = url; a.target = '_blank'; a.rel = 'noopener';
+      } else {
+        a.addEventListener('click', e => { e.preventDefault(); showToast('Link coming soon ✨'); });
+      }
+    });
+
+    const handle = TELEGRAM_SUPPORT.match(/t\.me\/([\w]+)/);
+    if (handle) {
+      const el = document.querySelector('[data-telegram-handle]');
+      el.textContent = 'Telegram: @' + handle[1];
+      el.hidden = false;
+    }
+
+    // Copy promo code
+    const copyBtn = document.querySelector('[data-copy]');
+    const copyLabel = document.querySelector('[data-copy-label]');
+    copyBtn.addEventListener('click', async () => {
+      const code = document.querySelector('[data-code]').textContent.trim();
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const t = document.createElement('textarea');
+        t.value = code; document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); } catch {}
+        t.remove();
+      }
+      copyLabel.textContent = 'Copied!';
+      copyBtn.classList.replace('bg-ink', 'bg-brand');
+      setTimeout(() => { copyLabel.textContent = 'Copy Code'; copyBtn.classList.replace('bg-brand', 'bg-ink'); }, 1800);
+    });
+
+    document.querySelector('[data-year]').textContent = new Date().getFullYear();
+
+    // Nav turns into a floating pill after scrolling
+    const navInner = document.querySelector('[data-nav-inner]');
+    const onScroll = () => {
+      const scrolled = window.scrollY > 24;
+      ['bg-white/85', 'backdrop-blur-xl', 'border-line', 'shadow-card'].forEach(c => navInner.classList.toggle(c, scrolled));
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('[data-menu-btn]');
+    const menu = document.querySelector('[data-menu]');
+    menuBtn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+
+    // Scroll reveal + highlight sweep
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .hl').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
